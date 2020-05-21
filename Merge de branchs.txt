@@ -68,3 +68,15 @@ git push -u origin master
 
 
 
+Crear un repositorio inicializado en github
+inicializar el repositorio local
+git init
+Agregar los archivos
+gita add NombreArchivo.txt
+git commit -m "mensaje"
+git remote add origin https://github.com/pedrico/Laravel.git
+git pull origin master --allow-unrelated-histories
+git push -u origin master
+
+
+
