@@ -71,3 +71,7 @@ auth()->user()
 $ php artisan clear-compiled 
 $ php artisan optimize
 
+
+--Crear link para apuntar a un proyecto fuera de www en laragon
+El primer parametro sera el nombre en laragon y el segundo la carpeta que contiene el proyecto
+mklink /d C:\laragon\www\picapino_popoyan C:\picapino
