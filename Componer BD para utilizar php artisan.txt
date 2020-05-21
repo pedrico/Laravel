@@ -1,0 +1,67 @@
+1. Hacer backup BD con linea de comandos
+En el explorador de windows click derecho en la carpeta que se va utilizar seleccionar terminal y ejecutar:
+mysqldump -u inmo -p -h inmoproduccion.c3qv8iyliahg.us-east-1.rds.amazonaws.com inmosuitebi > inmosuite_dump
+pass: wlfPRG640
+
+2. Hacer Export de inserts
+Server->Data Export
+seleccionar todas las tablas
+
+Eliminar las tablas usando el paso 3 o directamente el paso 4 (vacía completamente la BD)
+
+3. 
+
+SET FOREIGN_KEY_CHECKS = 0;
+drop table if exists bodegas;
+drop table if exists categorias;
+drop table if exists cobros_habitantes;
+drop table if exists configuracion;
+drop table if exists entidad_proyectos;
+drop table if exists finanzas_categorias;
+drop table if exists finanzas_subcategorias;
+drop table if exists garantias;
+drop table if exists habitantes_unidad;
+drop table if exists incidentes;
+drop table if exists marcas;
+drop table if exists mensaje_txt;
+
+drop table if exists model_has_permissions;
+drop table if exists model_has_roles;
+drop table if exists modulos;
+-- drop table if exists oauth_access_tokens;
+-- drop table if exists oauth_auth_codes;
+-- drop table if exists oauth_clients;
+-- drop table if exists oauth_personal_access_clients;
+-- drop table if exists oauth_refresh_tokens;
+drop table if exists observacion_incidentes;
+drop table if exists observacion_quejas;
+drop table if exists pagos;
+drop table if exists pagos_proveedores;
+drop table if exists password_resets;
+drop table if exists permissions;
+drop table if exists presupuestos;
+drop table if exists proveedors;
+drop table if exists proyecto_has_users;
+drop table if exists proyectos;
+drop table if exists quejas;
+drop table if exists role_has_modulos;
+drop table if exists role_has_permissions;
+drop table if exists roles;
+drop table if exists solicitud;
+drop table if exists solicitud_detalle;
+drop table if exists tarjetas_accesos;
+drop table if exists tipos_pagos;
+drop table if exists unidades_entidad;
+drop table if exists users;
+drop table if exists ubicacions;
+drop table if exists avisos_notificaciones_publicas;
+drop table if exists avisos_notificaciones_privadas;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+4. En el servidor utilizar
+php artisan migration:fresh
+
+5. Restaurar la informacion desde 
+Server->Data Import
+Seleccionar las tablas incluyendo las de Tableau ya que el comando del paso 4 elimina todas las tablas.

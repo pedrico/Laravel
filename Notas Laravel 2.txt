@@ -1,0 +1,73 @@
+--Creación de proyecto
+laravel new examen
+
+--Creación de controlador
+php artisan make:controller ProveedoresController --resource
+php artisan make:controller APIMyNubeController 
+
+--Crear el archivo de migración
+php artisan make:migration create_proveedores_table --create=proveedores
+
+--Ejecutar los archivos 
+php artisan migrate
+
+
+
+--Creación de controlador Especializaciones
+php artisan make:controller EspecializacionesController --resource
+
+--Crear el archivo de migración Especializaciones
+php artisan make:migration create_especializaciones_table --create=especializaciones
+
+--Ejecutar los archivos Especializaciones
+php artisan migrate
+
+--Realizar rollback de la ultima migración
+php artisan migrate:rollback --step=1
+
+--Error en Class not found al ejecutar php artisan migrate:rollback
+composer dump-autoload 
+
+--Crear modelo de una tabla (El nombre de la tabla en mayuscula y singular)
+php artisan make:model Nombretabla
+
+--Agregar campo a tabla en bd
+php artisan make:migration add_fecha_pago_to_pagos_proveedores --table=pagos_proveedores
+
+composer update
+
+para debuguear quitar en el env debug
+
+para ver la bd se puede desde mysql
+
+
+
+--Agregar seguridad de login
+public function __construct(){        
+	$this->middleware(['auth']);
+}
+
+
+--Restaurar un proyecto y hacerlo local con laragon
+composer intall
+crear un esquema en mysql para la base de datos
+colocar el nombre de la bd en el archivo .env
+ejecutar
+php artisan migrate
+
+
+--Eliminar tabla con migracion en laravel
+php artisan make:migration drop_user_table
+php artisan migrate
+
+--php artisan migrate para un archivo especifico
+php artisan migrate --path=/database/migrations/my_migration.php 
+
+php artisan migrate --path=/database/migrations/2019_07_10_140412_add_fecha_pago_to_pagos_proveedores.php
+
+auth()->user()
+
+--Resolver el error class not found de symfony. Obtenido de https://www.jesusamieiro.com/class-not-found-en-laravel/
+$ php artisan clear-compiled 
+$ php artisan optimize
+

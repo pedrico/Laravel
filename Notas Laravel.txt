@@ -1,0 +1,39 @@
+Laragon
+Composer
+
+--Crear proyecto
+--Posicionarse en c:\laragon\www
+laravel new INTECAP
+
+php artisan make:controller PagesController
+
+--Ejecutar los archivos 
+php artisan migrate
+php artisan migrate:rollback
+
+--Crear el archivo de migración
+php artisan make:migration create_messages_table --create=messages
+
+--Crear controlador con metodos REST
+php artisan make:controller MessagesController --resource
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--Cross Site Scripting XSS
+--CSRF token clase 27 Cómo manejar las peticiones REQUEST Y Clase 30 Qué son y cómo se utilizan los MIDDLEWARES

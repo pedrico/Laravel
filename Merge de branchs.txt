@@ -1,0 +1,70 @@
+Hacer merge
+
+Estando en branch Finanzas
+git status
+git add -A
+git commit
+git push
+
+git checkout master
+git pull
+git merge Finanzas
+
+Si hay conflictos, solucionarlos con gitkraken
+hacer commit con gitkraken luego de solucionar los conflictos
+
+Luego en gitkraken hacer "Merge branch 'master' into Finanzas"
+
+obtener una rama remota a una local 
+(https://www.git-tower.com/learn/git/faq/checkout-remote-branch)
+(https://stackoverflow.com/questions/9537392/git-fetch-remote-branch)
+git checkout --track origin/Finanzas
+
+git branch branch_name --set-upstream-to your_new_remote/branch_name 
+
+Configurar git para q detecte minusculas y mayusculas en folders/carpetas
+git config core.ignorecase false
+
+Generar dump, backup
+En el explorador de windows click derecho en la carpeta que se va utilizar seleccionar terminal y ejecutar:
+mysqldump -u inmo -p -h inmoproduccion.c3qv8iyliahg.us-east-1.rds.amazonaws.com inmosuitebi > inmosuite_dump
+pass: wlfPRG640
+	  
+Para conectarse a la BD
+mysql -h inmoproduccion.c3qv8iyliahg.us-east-1.rds.amazonaws.com -P 3306 -u inmo -p	  
+pass: wlfPRG640
+
+Acceder al servidor AWS
+ssh -i "InmoDeveloper.pem" ec2-user@ec2-3-215-226-93.compute-1.amazonaws.com
+ssh -i "inmosuite2.pem" ec2-user@ec2-3-215-226-93.compute-1.amazonaws.com
+
+comandos vim editor linux 
+(https://www.tecmint.com/exit-file-in-vi-vim-editor-in-linux/)
+guardar :wq
+editar archivo i
+salir sin guardar :q
+
+
+Generar export de información con statistics 0 en mysqldump
+https://stackoverflow.com/questions/51614140/how-to-disable-column-statistics-in-mysql-8-permanently
+
+
+Mostrar Diferencias
+If you want to see what you haven't git added yet:
+git diff myfile.txt
+
+or if you want to see already added changes
+git diff --cached myfile.txt
+
+
+--------------------------------------------------------
+Crear un nuevo repositorio
+echo "# prueba" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/pedrico/prueba.git
+git push -u origin master
+
+
+
